@@ -19,7 +19,9 @@ class AddUserAction extends Action
                 "</form>";
         }else{
             try {
-                AuthnProvider::register($_POST['newUName'], $_POST['newUEmail']);
+                $Name = filter_var($_POST['newUName'],FILTER_DEFAULT);
+                $Email = filter_var($_POST['newUEmail'],FILTER_DEFAULT);
+                AuthnProvider::register($Name,$Email);
                 $tmp .= "L'enregistrement de l'utilisateur s'est passé sans problème";
             }catch (\Exception $e){
                 $tmp .= $e->getMessage();

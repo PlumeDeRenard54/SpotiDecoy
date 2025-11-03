@@ -33,7 +33,8 @@ class AddPodcastTrackAction extends Action
 
         //Ajout d'une track
         if (isset($_POST['TrackID'])){
-            DeefyRepository::getInstance()->createLink($currentPlaylist->id, $_POST['TrackID']);
+            $ID = filter_var($_POST['TrackID'],FILTER_DEFAULT);
+            DeefyRepository::getInstance()->createLink($currentPlaylist->id, $ID);
             $tmp.= "<h3></br>Action effectuée</h3>";
         }
 

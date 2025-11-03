@@ -19,7 +19,8 @@ class AddPlaylistAction extends Action
 
         //Ajout de la playlist
         if (isset($_POST['newP'])){
-            DeefyRepository::getInstance()->addPlaylist($_POST['newP']);
+            $newPlaylist = filter_var($_POST['newP'],FILTER_DEFAULT);
+            DeefyRepository::getInstance()->addPlaylist($newPlaylist);
         }
 
         //Liste des playlists

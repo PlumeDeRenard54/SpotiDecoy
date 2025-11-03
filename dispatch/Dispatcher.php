@@ -19,7 +19,7 @@ class Dispatcher
     {
         if ($action == null) {$this->action = "default";}
         else {
-            $this->action = $action;    
+            $this->action = $action;
         }
     }
 
