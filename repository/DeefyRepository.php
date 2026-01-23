@@ -19,7 +19,7 @@ class DeefyRepository
 
     private function __construct() {
         //mysql:host=localhost;dbname=SpotiDecoy
-        $dsn = DeefyRepository::$config['driver'] . ':host=' .DeefyRepository::$config['host'] . ';dbname=' . DeefyRepository::$config['database'];
+        $dsn = DeefyRepository::$config['driver'] . ':host=' .DeefyRepository::$config['host'] . ';dbname=' . "SpotiDecoy";
         $this->pdo = new PDO($dsn, DeefyRepository::$config['username'], DeefyRepository::$config['password']);
     }
 

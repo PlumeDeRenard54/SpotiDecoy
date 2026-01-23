@@ -32,7 +32,7 @@ if(isset($_POST["submit"])) {
         $tmp .= "Your file was not uploaded</br>";
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            DeefyRepository::setConfig("/opt/lampp/htdocs/Config.ini");;
+            DeefyRepository::setConfig("../../../Config.ini");;
             $repo = DeefyRepository::getInstance();
             $track = new AudioTrack($repo->getMaxIdTrack()+1, $_POST['trackName'], "http://localhost/SpotiDecoy/TrackGestion/Source/" . $_FILES["fileToUpload"]["name"],$_POST['numeroPiste']);
             DeefyRepository::getInstance()->addTrack($track);

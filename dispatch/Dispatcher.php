@@ -28,7 +28,7 @@ class Dispatcher
      * @throws \Exception
      */
     public function run() : void {
-        DeefyRepository::setConfig("/opt/lampp/htdocs/Config.ini");
+        DeefyRepository::setConfig("../../../Config.ini");
         session_start();
         echo "<head> <link rel = \"stylesheet\" href=\"./CSSGPT.css\">" .
             "<title> SpotiDecoy </title></head>";
